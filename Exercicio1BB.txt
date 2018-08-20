@@ -1,0 +1,121 @@
+
+
+--ALTER TABLE planetas MODIFY galáxia VARCHAR(20);
+
+--SELECT * from Filmes;
+
+
+
+--inicio do trabalho
+
+--2:
+
+--2.1
+CREATE TABLE alunos_da_universidade(
+
+nome VARCHAR(8),
+cpf VARCHAR(12),
+curso VARCHAR(50),
+matricula CHAR(9)
+
+);
+
+--2.2
+CREATE TABLE planetas(
+
+nome_do_planeta  VARCHAR(8),
+sistema VARCHAR(8),
+galáxia VARCHAR(8)
+
+);
+
+--3.10
+INSERT INTO alunos_da_universidade
+VALUES ('Jose', '684558008-45','Engenharia de Software' , '181300576');
+INSERT INTO alunos_da_universidade
+VALUES ('Maria', '684554508-35','Engenharia Elétrica' , '181307776');
+INSERT INTO alunos_da_universidade
+VALUES ('Pedro', '677558008-28','Engenharia Mecânica' , '182200576');
+INSERT INTO alunos_da_universidade
+VALUES ('João', '684558088-48','Engenharia de Produção' , '181300996');
+INSERT INTO alunos_da_universidade
+VALUES ('Matheus', '984558008-15','Processos Gerenciais' , '184500576');
+INSERT INTO alunos_da_universidade
+VALUES ('Marcos', '684556608-35','Arquitetura e Urbanismo' , '187400576');
+INSERT INTO alunos_da_universidade
+VALUES ('Lucas', '622558008-55','Direito' , '181890576');
+INSERT INTO alunos_da_universidade
+VALUES ('Athos', '684558078-95','Engenharia Química' , '112300576');
+INSERT INTO alunos_da_universidade
+VALUES ('Porthos', '684558408-47','Física' , '189000576');
+INSERT INTO alunos_da_universidade
+VALUES ('Aramis', '684598008-85','Matemática' , '181430576');
+
+INSERT INTO planetas
+VALUES ('Mercúrio', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Vênus', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Terra', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Marte', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Júpter', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Saturno', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Urano', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Netuno', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('Plutão', 'solar','Via Láctea');
+INSERT INTO planetas
+VALUES ('YXXED-29', 'Muska','NX009');
+
+--4:
+
+CREATE TABLE Filmes
+(
+ titulo VARCHAR(250),
+ ano NUMBER(4),
+ diretor VARCHAR(100),
+ genero VARCHAR(20),
+ atoresPrincipais VARCHAR(1000),
+ duracao NUMBER(4), -- em minutos
+ valorIngresso NUMBER(5,2)
+);
+
+INSERT INTO FILMES
+VALUES ('jack o Estripador', '1970','Zé Ruela','terror','Zé Zinho Lala','60','25');
+INSERT INTO FILMES
+VALUES ('Alien o 8° Passageiro', '1985','Zé Mané','terror','Zinha Zé Lili','60','15');
+INSERT INTO FILMES
+VALUES ('O Mágico de OZ', '1960','Maria','Musical','Lálá Lélé Lili','80','10');
+
+--4.1
+--a
+select titulo, ano, diretor from FILMES;
+--b
+select ano from filmes where ano = 2010;
+--c
+select titulo,ano from FILMES where duracao > 60;
+--d
+select titulo, duracao from filmes where ano BETWEEN 1990 and 2000 and
+duracao >= 80 and diretor like 'j';
+--e
+select titulo, genero, valorIngresso from FILMES where ano > 2006 and SET valorIngresso * 0.0863;
+--f
+select * from FILMES where genero = ação and valor > 20.00;
+--g
+select DISTINCT diretor from FILMES ORDER BY diretor;
+
+--4.2
+--a
+UPDATE Filmes
+SET duracao + 10
+WHERE atoresPrincipais = 'Angelina Jolie';
+--b
+UPDATE Filmes 
+SET valorIngresso * 0.1
+WHERE genero = 'ação' and ano = 2011;
+
