@@ -8,6 +8,17 @@
 
 --inicio do trabalho
 
+--1
+--a
+Um banco de dados relacional é um banco de dados que modela os dados de uma forma que eles sejam percebidos pelo usuário como tabelas, ou mais formalmente relações.
+
+O termo é aplicado aos próprios dados, quando organizados dessa forma, ou a um Sistema Gerenciador de Banco de Dados Relacional (SGBDR) – do inglês Relational database management system (RDBMS) – um programa de computador que implementa a abstração.
+
+--b
+
+
+
+
 --2:
 
 --2.1
@@ -85,27 +96,58 @@ CREATE TABLE Filmes
  valorIngresso NUMBER(5,2)
 );
 
-INSERT INTO FILMES
-VALUES ('jack o Estripador', '1970','Zé Ruela','terror','Zé Zinho Lala','60','25');
-INSERT INTO FILMES
-VALUES ('Alien o 8° Passageiro', '1985','Zé Mané','terror','Zinha Zé Lili','60','15');
-INSERT INTO FILMES
-VALUES ('O Mágico de OZ', '1960','Maria','Musical','Lálá Lélé Lili','80','10');
+insert into filmes
+values('Cosmopolis',2012,'David Cronenberg','Drama','Robert Pattinson, Juliette Binoche, Sarah Gadon, Mathieu Amalric',108,22.99);
+
+insert into filmes
+values('The Awakening',2012,'Nick Murphy ','Horror','Rebecca Hall, Dominic West, Imelda Staunton, Lucy Cohu',107,29.99);
+
+insert into filmes
+values('The Shawshank Redemption',1994,'Frank Darabont','Drama,Crime','Tim Robbins, Morgan Freeman and Bob Gunton',142,25.99);
+
+insert into filmes
+values('Pulp Fiction',1994,'Quentin Tarantino','Crime,Thriller','John Travolta, Uma Thurman and Samuel L. Jackson',154,29.99);
+
+insert into filmes
+values('One Flew Over the Cuckoos Nest',1975,'Milos Forman','Drama','Jack Nicholson, Louise Fletcher and Michael Berryman',133,55.99);
+
+insert into filmes
+values('Inception',2010,'Christopher Nolan','Action','Leonardo DiCaprio, Joseph Gordon-Levitt and Ellen Page',148,79.99);
+
+insert into filmes
+values('Fight Club',1999,'David Fincher','Drama','Brad Pitt, Edward Norton and Helena Bonham Carter',139,75.99);
+
+insert into filmes
+values('Casablanca',1942,'Michael Curtiz','Drama','Humphrey Bogart, Ingrid Bergman and Paul Henreid',102,62.99);
+
+insert into filmes
+values('The Matrix',1999,'Andy Wachowski, Lana Wachowski','Action','Keanu Reeves, Laurence Fishburne and Carrie-Anne',136,28.99);
+
+insert into filmes
+values('Se7en',1995,'David Fincher','Crime','Morgan Freeman, Brad Pitt and Kevin Spacey',127,42.99);
+
+-- FIM
 
 --4.1
 --a
 select titulo, ano, diretor from FILMES;
+
 --b
 select ano from filmes where ano = 2010;
+
 --c
 select titulo,ano from FILMES where duracao > 60;
+
 --d
 select titulo, duracao from filmes where ano BETWEEN 1990 and 2000 and
-duracao >= 80 and diretor like 'j';
+duracao >= 80 and diretor LIKE 'j%';
+
 --e
 select titulo, genero, valorIngresso from FILMES where ano > 2006 and SET valorIngresso * 0.0863;
+
 --f
-select * from FILMES where genero = ação and valor > 20.00;
+select * from FILMES where genero LIKE 'ação' and valor > 20;
+
 --g
 select DISTINCT diretor from FILMES ORDER BY diretor;
 
@@ -113,9 +155,27 @@ select DISTINCT diretor from FILMES ORDER BY diretor;
 --a
 UPDATE Filmes
 SET duracao + 10
-WHERE atoresPrincipais = 'Angelina Jolie';
+WHERE atoresPrincipais LIKE 'Angelina Jolie';
+
 --b
 UPDATE Filmes 
 SET valorIngresso * 0.1
-WHERE genero = 'ação' and ano = 2011;
+WHERE genero LIKE 'ação' and ano = 2011;
+
+--c
+UPDATE Filmes
+SET Titulo || '*'
+WHERE duracao <= 30;
+
+--4.3
+--a
+DELETE FROM Filmes
+WHERE ValorIngresso > 60;
+
+--b
+DELETE FROM Filmes
+WHERE titulo LIKE 'assombrado' or 
+atoresPrincipais LIKE '%Johson';
+
+
 
