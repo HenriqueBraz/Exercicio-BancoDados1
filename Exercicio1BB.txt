@@ -15,17 +15,34 @@ Um banco de dados relacional é um banco de dados que modela os dados de uma form
 O termo é aplicado aos próprios dados, quando organizados dessa forma, ou a um Sistema Gerenciador de Banco de Dados Relacional (SGBDR) – do inglês Relational database management system (RDBMS) – um programa de computador que implementa a abstração.
 
 --b
-?
-?
-?
-?
-?
-?
-?
-?
-?
-?
+B
 
+A
+
+C
+
+E
+
+B
+
+C
+
+B
+
+C
+
+D
+
+E
+
+--c
+CHAR/NCHAR - Para dados com cadeias de caracteres limitados.
+
+VARCHAR - Para dados com cadeias de caracteres variáveis.
+
+DATE - Para dados com ano, mês, dia, hora e minuto.
+
+NUMBER - Para dados com valores com ou sem decimais.
 
 
 --2:
