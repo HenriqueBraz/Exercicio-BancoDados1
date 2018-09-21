@@ -1,0 +1,32 @@
+--1. Exercícios de junções (sobre o banco de dados do Estudo de Caso)
+--Para cada um dos itens abaixo, escreva um comando SELECT para buscar os dados:
+
+--1. O título e o nome do autor dos produtos importados, ordenados pelo título.
+
+select produtos.titulo, autores.nome from  produtos join autores_produtos  on 
+produtos.cod_produto = autores_produtos.cod_produto join autores on autores_produtos.cod_autor = autores.cod_autor;
+
+
+
+--2. A quantidade de cidades cadastradas no estado de São Paulo.
+
+select count(*)
+from cidades join estados 
+on cidades.uf = estados.uf 
+where estados.uf = 'SP';
+
+
+--3. Os nomes, e-mails e números de telefone dos clientes cujos telefones são
+--do código de área (ddd) 51.
+
+select usuarios.nome, usuarios.email, telefones.ddd
+from usuarios join clientes on usuarios.cod_usuario = clientes.cod_cliente
+join telefones on clientes.cod_cliente = telefones.cod_cliente
+where telefones.ddd = 51;
+
+
+--4. O código, o nome e a região de cada cidade dos estados do Rio Grande do
+--Sul, São Paulo e Pernambuco cujo nome inicia por “Santa”. Ordenar pelo
+--nome da cidade de forma decrescente.
+--5. Os nomes dos autores (ordenados e sem repetir) cujos produtos já foram
+--vendidos para algum cliente da região norte.
