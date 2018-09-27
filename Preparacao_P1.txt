@@ -36,3 +36,14 @@ order by NOME DESC ;
 
 --5. Os nomes dos autores (ordenados e sem repetir) cujos produtos já foram
 --vendidos para algum cliente da região norte.
+
+select distinct autores.nome, estados.regiao
+from autores join autores_produtos on autores.cod_autor = autores_produtos.cod_autor 
+join produtos on autores_produtos.cod_produto = produtos.cod_produto
+join pedidos_produtos on produtos.cod_produto = pedidos_produtos.cod_produto
+join pedidos on pedidos_produtos.num_pedido = pedidos.num_pedido
+join clientes_enderecos on pedidos.cod_cliente = clientes_enderecos.cod_cliente
+join enderecos on clientes_enderecos.cod_endereco = enderecos.cod_endereco
+join cidades on enderecos.cod_cidade = cidades.cod_cidade
+join estados on cidades.uf = estados.uf
+ where estados.regiao = 'N';
