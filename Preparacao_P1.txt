@@ -1,14 +1,14 @@
---1. ExercÌcios de junÁıes (sobre o banco de dados do Estudo de Caso)
+--1. Exerc√≠cios de jun√ß√µes (sobre o banco de dados do Estudo de Caso)
 --Para cada um dos itens abaixo, escreva um comando SELECT para buscar os dados:
 
---1. O tÌtulo e o nome do autor dos produtos importados, ordenados pelo tÌtulo.
+--1. O t√≠tulo e o nome do autor dos produtos importados, ordenados pelo t√≠tulo.
 
 select produtos.titulo, autores.nome from  produtos join autores_produtos  on 
 produtos.cod_produto = autores_produtos.cod_produto join autores on autores_produtos.cod_autor = autores.cod_autor;
 
 
 
---2. A quantidade de cidades cadastradas no estado de S„o Paulo.
+--2. A quantidade de cidades cadastradas no estado de S√£o Paulo.
 
 select count(*)
 from cidades join estados 
@@ -16,8 +16,8 @@ on cidades.uf = estados.uf
 where estados.uf = 'SP';
 
 
---3. Os nomes, e-mails e n˙meros de telefone dos clientes cujos telefones s„o
---do cÛdigo de ·rea (ddd) 51.
+--3. Os nomes, e-mails e n√∫meros de telefone dos clientes cujos telefones s√£o
+--do c√≥digo de √°rea (ddd) 51.
 
 select usuarios.nome, usuarios.email, telefones.ddd
 from usuarios join clientes on usuarios.cod_usuario = clientes.cod_cliente
@@ -25,8 +25,14 @@ join telefones on clientes.cod_cliente = telefones.cod_cliente
 where telefones.ddd = 51;
 
 
---4. O cÛdigo, o nome e a regi„o de cada cidade dos estados do Rio Grande do
---Sul, S„o Paulo e Pernambuco cujo nome inicia por ìSantaî. Ordenar pelo
+--4. O c√≥digo, o nome e a regi√£o de cada cidade dos estados do Rio Grande do
+--Sul, S√£o Paulo e Pernambuco cujo nome inicia por ‚ÄúSanta‚Äù. Ordenar pelo
 --nome da cidade de forma decrescente.
---5. Os nomes dos autores (ordenados e sem repetir) cujos produtos j· foram
---vendidos para algum cliente da regi„o norte.
+
+select cidades.cod_cidade, cidades.nome, estados.regiao 
+from cidades join estados on cidades.uf = estados.uf
+where cidades.nome like 'Santa%' and ( estados.uf like 'PE' or estados.uf like 'SP' or estados.uf like 'RS')
+order by NOME DESC ;
+
+--5. Os nomes dos autores (ordenados e sem repetir) cujos produtos j√° foram
+--vendidos para algum cliente da regi√£o norte.
