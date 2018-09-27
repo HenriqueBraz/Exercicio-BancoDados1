@@ -1,6 +1,6 @@
 
 
---ALTER TABLE planetas MODIFY gal·xia VARCHAR(20);
+--ALTER TABLE planetas MODIFY gal√°xia VARCHAR(20);
 
 --SELECT * from Filmes;
 
@@ -9,16 +9,16 @@
 --inicio do trabalho
 
 --1
---a
-Um banco de dados relacional È um banco de dados que modela os dados de uma forma que eles sejam percebidos pelo usu·rio como tabelas, ou mais formalmente relaÁıes.
+--a) O que voc√™ entende por banco de dados relacional?
+Um banco de dados relacional √© um banco de dados que modela os dados de uma forma que eles sejam percebidos pelo usu√°rio como tabelas, ou mais formalmente rela√ß√µes.
 
-O termo È aplicado aos prÛprios dados, quando organizados dessa forma, ou a um Sistema Gerenciador de Banco de Dados Relacional (SGBDR) ñ do inglÍs Relational database management system (RDBMS) ñ um programa de computador que implementa a abstraÁ„o.
+O termo √© aplicado aos pr√≥prios dados, quando organizados dessa forma, ou a um Sistema Gerenciador de Banco de Dados Relacional (SGBDR) ‚Äì do ingl√™s Relational database management system (RDBMS) ‚Äì um programa de computador que implementa a abstra√ß√£o.
 
 --b
 B
 
 A
-
+                  
 C
 
 E
@@ -35,19 +35,23 @@ D
 
 E
 
---c
+--c) Quais os principais tipos de dados da linguagem SQL? D√™ um exemplo de
+uso de cada um.
+
 CHAR/NCHAR - Para dados com cadeias de caracteres limitados.
 
-VARCHAR - Para dados com cadeias de caracteres vari·veis.
+VARCHAR - Para dados com cadeias de caracteres vari√°veis.
 
-DATE - Para dados com ano, mÍs, dia, hora e minuto.
+DATE - Para dados com ano, m√™s, dia, hora e minuto.
 
 NUMBER - Para dados com valores com ou sem decimais.
 
 
 --2:
 
---2.1
+--2.1 Crie uma tabela para armazenar dados sobre alunos da universidade.
+Defina os atributos e seus tipos. Use o comando CREATE TABLE.
+
 CREATE TABLE alunos_da_universidade(
 
 nome VARCHAR(8),
@@ -57,24 +61,28 @@ matricula CHAR(9)
 
 );
 
---2.2
+--2.2. Crie uma tabela para armazenar dados sobre planetas. Defina os
+atributos e seus tipos. Use o comando CREATE TABLE.
+
 CREATE TABLE planetas(
 
 nome_do_planeta  VARCHAR(8),
 sistema VARCHAR(8),
-gal·xia VARCHAR(8)
+gal√°xia VARCHAR(8)
 
 );
 
---3.10
+--3.1. Usando o comando INSERT, insira pelo menos 10 registros em cada uma
+das tabelas criadas no exerc√≠cio anterior.
+
 INSERT INTO alunos_da_universidade
 VALUES ('Jose', '684558008-45','Engenharia de Software' , '181300576');
 INSERT INTO alunos_da_universidade
-VALUES ('Maria', '684554508-35','Engenharia ElÈtrica' , '181307776');
+VALUES ('Maria', '684554508-35','Engenharia El√©trica' , '181307776');
 INSERT INTO alunos_da_universidade
-VALUES ('Pedro', '677558008-28','Engenharia Mec‚nica' , '182200576');
+VALUES ('Pedro', '677558008-28','Engenharia Mec√¢nica' , '182200576');
 INSERT INTO alunos_da_universidade
-VALUES ('Jo„o', '684558088-48','Engenharia de ProduÁ„o' , '181300996');
+VALUES ('Jo√£o', '684558088-48','Engenharia de Produ√ß√£o' , '181300996');
 INSERT INTO alunos_da_universidade
 VALUES ('Matheus', '984558008-15','Processos Gerenciais' , '184500576');
 INSERT INTO alunos_da_universidade
@@ -82,30 +90,30 @@ VALUES ('Marcos', '684556608-35','Arquitetura e Urbanismo' , '187400576');
 INSERT INTO alunos_da_universidade
 VALUES ('Lucas', '622558008-55','Direito' , '181890576');
 INSERT INTO alunos_da_universidade
-VALUES ('Athos', '684558078-95','Engenharia QuÌmica' , '112300576');
+VALUES ('Athos', '684558078-95','Engenharia Qu√≠mica' , '112300576');
 INSERT INTO alunos_da_universidade
-VALUES ('Porthos', '684558408-47','FÌsica' , '189000576');
+VALUES ('Porthos', '684558408-47','F√≠sica' , '189000576');
 INSERT INTO alunos_da_universidade
-VALUES ('Aramis', '684598008-85','Matem·tica' , '181430576');
+VALUES ('Aramis', '684598008-85','Matem√°tica' , '181430576');
 
 INSERT INTO planetas
-VALUES ('Merc˙rio', 'solar','Via L·ctea');
+VALUES ('Merc√∫rio', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('VÍnus', 'solar','Via L·ctea');
+VALUES ('V√™nus', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('Terra', 'solar','Via L·ctea');
+VALUES ('Terra', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('Marte', 'solar','Via L·ctea');
+VALUES ('Marte', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('J˙pter', 'solar','Via L·ctea');
+VALUES ('J√∫pter', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('Saturno', 'solar','Via L·ctea');
+VALUES ('Saturno', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('Urano', 'solar','Via L·ctea');
+VALUES ('Urano', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('Netuno', 'solar','Via L·ctea');
+VALUES ('Netuno', 'solar','Via L√°ctea');
 INSERT INTO planetas
-VALUES ('Plut„o', 'solar','Via L·ctea');
+VALUES ('Plut√£o', 'solar','Via L√°ctea');
 INSERT INTO planetas
 VALUES ('YXXED-29', 'Muska','NX009');
 
@@ -154,54 +162,80 @@ values('Se7en',1995,'David Fincher','Crime','Morgan Freeman, Brad Pitt and Kevin
 
 -- FIM
 
---4.1
---a
+--4.1 Escreva comandos SELECT para os itens abaixo:
+
+--a) o t√≠tulo, o ano e o diretor de todos os filmes.
+
 select titulo, ano, diretor from FILMES;
 
---b
+--b) os filmes de terror de 2010
+
 select ano from filmes where ano = 2010;
 
---c
+--c) o t√≠tulo e o ano dos filmes com dura√ß√£o maior do que 2 horas
+
 select titulo,ano from FILMES where duracao > 60;
 
---d
+--d) o t√≠tulo e a dura√ß√£o das com√©dias lan√ßadas na d√©cada de 1990 com
+pelo menos 1 hora e 20 minutos de dura√ß√£o, dos diretores cujos
+nomes come√ßam pela letra ‚ÄòJ‚Äô. Pesquise sobre o operador LIKE.
+
 select titulo, duracao from filmes where ano BETWEEN 1990 and 2000 and
 duracao >= 80 and diretor LIKE 'j%';
 
---e
+--e) o t√≠tulo, o g√™nero e o valor do ingresso dos filmes a partir de 2006,
+mostrando os valores inflacionados em 8,63%.
+
 select titulo, genero, valorIngresso from FILMES where ano > 2006 and SET valorIngresso * 0.0863;
 
---f
-select * from FILMES where genero LIKE 'aÁ„o' and valor > 20;
+--f) a quantidade de filmes de a√ß√£o com ingressos que custam mais do
+que R$ 20,00.
 
---g
+select * from FILMES where genero LIKE 'a√ß√£o' and valor > 20;
+
+--g) os nomes de todos os diretores cadastrados, sem repetir, e em
+ordem alfab√©tica.
+
 select DISTINCT diretor from FILMES ORDER BY diretor;
 
---4.2
---a
+--4.2 Escreva comandos UPDATE para os itens abaixo:
+
+--a)  aumentar em 10 minutos a dura√ß√£o dos filmes em que participa a
+atriz Angelina Jolie.
+
 UPDATE Filmes
 SET duracao + 10
 WHERE atoresPrincipais LIKE 'Angelina Jolie';
 
---b
+--b) dar um desconto de 10% para os filmes de a√ß√£o do ano 2011.
 UPDATE Filmes 
 SET valorIngresso * 0.1
-WHERE genero LIKE 'aÁ„o' and ano = 2011;
+WHERE genero LIKE 'a√ß√£o' and ano = 2011;
 
---c
+--c) acrescentar um asterisco (*) no final dos t√≠tulos dos filmes com
+dura√ß√£o menor ou igual a 30 minutos. Use o operador || para
+concatenar strings.
+
 UPDATE Filmes
 SET Titulo || '*'
 WHERE duracao <= 30;
 
---4.3
---a
+--4.3 Escreva comandos DELETE para os itens abaixo:
+
+--a) excluir os filmes com valor de ingresso superior a R$ 60,00
+
 DELETE FROM Filmes
 WHERE ValorIngresso > 60;
 
---b
+--b)  excluir os filmes em cujo t√≠tulo aparece a palavra ‚Äúassombrado‚Äù ou
+cujo sobrenome do diretor √© ‚ÄúJohnson‚Äù. Use o operador LIKE para
+realizar essa quest√£o.
+
 DELETE FROM Filmes
 WHERE titulo LIKE 'assombrado' or 
 atoresPrincipais LIKE '%Johson';
+
+
 
 
 
